@@ -1,5 +1,6 @@
 # ClearPay: an AI copilot for accounts-payable exceptions, built and tested on real public payment data
 
+Live demo: https://clearpay-uyvrikvnmqqqxnytj2r5zh.streamlit.app/
 
 ## 1. The problem
 
