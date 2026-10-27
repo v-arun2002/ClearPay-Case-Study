@@ -8,18 +8,20 @@ Accounts-payable teams pay thousands of invoices a year, and some share of them 
 
 ClearPay frames the customer as the City of Baltimore's Department of Accounts Payable, working from the city's own public Open Checkbook payment feed. That framing is an exercise, not an engagement: the city hasn't seen this project, and nothing here claims any payment was fraudulent or wrong. The customer's two risks, as the problem statement puts them (`docs/problem_statement.md`):
 
+```text
+Baltimore feed -> dbt + DuckDB -> Frozen snapshot
+                                        |
+                                        v
+  +--------------- LangGraph agent, five nodes ----------------+
+  | Ingest -> Classify -> Policy -> Draft action -> Approval   |
+  +----------------+----------------------+-------------+-----+
+                   |                      |             |
+          Read-only MCP server     Guard + judge v1   Hash-chained
+                                  (outside the prompt)  audit log
 
-Baltimore feed
-dbt + DuckDB
-Frozen snapshot
-Ingest
-Classify
-Policy
-Draft action
-Human approval
-Guard + judge v1
-Hash-chained audit log
-Read-only MCP server
+No payment tool exists. Code decides every action.
+Every duplicate goes to a human reviewer (Rule 1).
+```
 
 1. **Paying a vendor twice.**
 2. **Wrongly accusing a vendor of being paid twice when they weren't.**
