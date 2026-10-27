@@ -1,4 +1,5 @@
 **Live demo (may take a minute to wake):** https://clearpay-uyvrikvnmqqqxnytj2r5zh.streamlit.app/
+
 **Instant walkthrough (replayed):** https://v-arun2002.github.io/ClearPay-Case-Study/walkthrough/
 
 # ClearPay: an AI copilot for accounts-payable exceptions, built and tested on real public payment data
